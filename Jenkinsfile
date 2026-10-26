@@ -7,6 +7,7 @@ pipeline {
             steps {
                 bat 'git --version'
                 bat '"C:\\Users\\pc\\AppData\\Local\\Programs\\Python\\Python314\\python.exe" --version'
+                bat 'docker --version'
             }
         }
 
@@ -24,24 +25,37 @@ pipeline {
                 '''
             }
         }
-        
+
         stage('Install Dependencies') {
             steps {
                 bat '"C:\\Users\\pc\\AppData\\Local\\Programs\\Python\\Python314\\python.exe" -m pip --version'
-
                 bat '"C:\\Users\\pc\\AppData\\Local\\Programs\\Python\\Python314\\python.exe" -m pip install -r requirements.txt'
             }
         }
+
         stage('Run Automated Tests') {
             steps {
-                 bat '"C:\\Users\\pc\\AppData\\Local\\Programs\\Python\\Python314\\python.exe" -m pytest tests -v'
+                bat '"C:\\Users\\pc\\AppData\\Local\\Programs\\Python\\Python314\\python.exe" -m pytest tests -v'
             }
         }
+
         stage('Inspect Project') {
             steps {
                 bat 'dir'
-
                 bat 'if exist requirements.txt (echo requirements.txt found) else (echo requirements.txt not found)'
+                bat 'if exist Dockerfile (echo Dockerfile found) else (echo Dockerfile not found)'
+            }
+        }
+
+        stage('Build Docker Image') {
+            steps {
+                bat 'docker build -t dynamic-class-track:latest .'
+            }
+        }
+
+        stage('Verify Docker Image') {
+            steps {
+                bat 'docker image inspect dynamic-class-track:latest'
             }
         }
     }
