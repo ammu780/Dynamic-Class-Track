@@ -1,4 +1,4 @@
-
+```groovy
 pipeline {
     agent any
 
@@ -7,7 +7,7 @@ pipeline {
             steps {
                 bat 'git --version'
                 bat '"C:\\Users\\pc\\AppData\\Local\\Programs\\Python\\Python314\\python.exe" --version'
-                bat 'docker --version'
+                bat '"C:\\Users\\pc\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe" --version'
             }
         }
 
@@ -49,14 +49,15 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-                bat 'docker build -t dynamic-class-track:latest .'
+                bat '"C:\\Users\\pc\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe" build -t dynamic-class-track:latest .'
             }
         }
 
         stage('Verify Docker Image') {
             steps {
-                bat 'docker image inspect dynamic-class-track:latest'
+                bat '"C:\\Users\\pc\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe" image inspect dynamic-class-track:latest'
             }
         }
     }
 }
+```
