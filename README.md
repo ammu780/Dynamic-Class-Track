@@ -175,17 +175,11 @@ http://127.0.0.1:5000
 
 ## 6. Ready-to-Test Demo Credentials
 
-The database is pre-seeded with sample data representing Gayatri Vidya Parishad College of Engineering for Women:
+## Demo Access
 
-| Portal | Username / Roll No | Password | Role Details |
-|---|---|---|---|
-| **Admin Portal** | `admin` | `Admin@123` | College Administrator |
-| **Faculty Portal** | `fac_sharma` | `Faculty@123` | Dr. Ananya Sharma (CSE) |
-| **Faculty Portal** | `fac_rao` | `Faculty@123` | Prof. K. V. Rao (CSE) |
-| **Student Portal** | `student_sneha` | `Student@123` | Sneha Reddy (22L31A0501, CSE Sem 5 Sec A) |
-| **Student Portal** | `student_kavya` | `Student@123` | Kavya Varma (22L31A0502, CSE Sem 5 Sec A) |
-| **Student Portal** | `student_divya` | `Student@123` | Divya Teja (22L31A0401, ECE Sem 5 Sec A) |
-
+This project provides separate Admin, Faculty, and Student portals.
+Demo login credentials are shared privately for demonstration purposes.
+Public registration is disabled.
 ---
 
 ## 7. Testing Key Workflows
