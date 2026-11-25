@@ -17,4 +17,4 @@ ENV PORT=5000
 
 EXPOSE 5000
 
-CMD ["python", "run.py"]
+CMD ["sh", "-c", "python run.py init-db && python run.py seed-data && exec python run.py"]
