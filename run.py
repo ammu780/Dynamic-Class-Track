@@ -63,4 +63,4 @@ if __name__ == "__main__":
         init_scheduler(app)
         port = int(os.environ.get("PORT", 5000))
         # SocketIO provides real-time websockets with seamless polling fallback
-        socketio.run(app, host="0.0.0.0", port=port, debug=True, allow_unsafe_werkzeug=True)
+        socketio.run(app, host="0.0.0.0", port=port, debug=False, allow_unsafe_werkzeug=True)
